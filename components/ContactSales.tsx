@@ -7,13 +7,9 @@ import {
   TextField,
   Button,
   Paper,
-  InputBase,
 } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Link from "next/link";
+import DescriptionIcon from "@mui/icons-material/Description";
 
 export default function ContactSales() {
   const [formData, setFormData] = React.useState({
@@ -25,7 +21,9 @@ export default function ContactSales() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -39,31 +37,69 @@ export default function ContactSales() {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
-      <Box sx={{ textAlign: 'center', gap: 4, mb: 8, mt: 16 }}>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Box sx={{ textAlign: "center", mb: 8, mt: 16 }}>
         <Typography
-          variant="h4"
           color="text.primary"
-          sx={{ fontWeight: 700, fontFamily: 'Inter, -apple-system, sans-serif' }}
+          sx={{
+            fontWeight: 700,
+            fontSize: "2.7rem",
+            fontFamily: "Inter, -apple-system, sans-serif",
+          }}
         >
           Considering adoption?
         </Typography>
         <Typography
-          variant="h4"
           color="text.primary"
-          sx={{ fontWeight: 700, fontFamily: 'Inter, -apple-system, sans-serif' }}
+          sx={{
+            fontWeight: 700,
+            fontSize: "2.7rem",
+            fontFamily: "Inter, -apple-system, sans-serif",
+          }}
         >
           Talk to the Scaleworks team first
         </Typography>
       </Box>
 
-      <Box sx={{ display: 'flex', gap: 4, maxWidth: 900, mx: 'auto', alignItems: 'flex-start' }}>
-        <Paper elevation={0} sx={{ p: 4, flex: 1, borderRadius: 3, border: 1.5, borderColor: '#E0E0E0' }}>
-          <Typography variant="h5" component="h1" gutterBottom align="left" sx={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif', fontWeight: 600, mb: 6 }}>
+      <Box
+        sx={{
+          display: "flex",
+          mb: 8,
+          alignItems: "flex-start",
+          flexDirection: { xs: "column", md: "row" },
+        }}
+      >
+        <Paper
+          elevation={0}
+          sx={{
+            p: 4,
+            flex: 1,
+            maxWidth: 500,
+            borderRadius: 3,
+            border: 1.5,
+            borderColor: "#E0E0E0",
+          }}
+        >
+          <Typography
+            variant="h5"
+            component="h1"
+            gutterBottom
+            align="left"
+            sx={{
+              fontFamily:
+                "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+              fontWeight: 600,
+              mb: 4,
+            }}
+          >
             Fill in the form
           </Typography>
 
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2, maxWidth: 480, mx: "auto" }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{ mt: 2, maxWidth: 480, mx: "auto", width: "100%" }}
+          >
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               <Box sx={{ display: "flex", gap: 3 }}>
                 <TextField
@@ -73,7 +109,12 @@ export default function ContactSales() {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, pointerEvents: 'auto' } }}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: 2,
+                      pointerEvents: "auto",
+                    },
+                  }}
                 />
                 <TextField
                   fullWidth
@@ -82,9 +123,15 @@ export default function ContactSales() {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, pointerEvents: 'auto' } }}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: 2,
+                      pointerEvents: "auto",
+                    },
+                  }}
                 />
               </Box>
+
               <TextField
                 fullWidth
                 label="Company"
@@ -92,142 +139,201 @@ export default function ContactSales() {
                 value={formData.company}
                 onChange={handleChange}
                 required
-                sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, pointerEvents: 'auto' } }}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: 2,
+                    pointerEvents: "auto",
+                  },
+                }}
               />
-              <Box sx={{ display: "flex", gap: 3 }}>
-                <TextField
-                  fullWidth
-                  label="Email Address"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, pointerEvents: 'auto' } }}
-                />
-              </Box>
+
               <TextField
                 fullWidth
-                label="Phone"
+                label="Email Address"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: 2,
+                    pointerEvents: "auto",
+                  },
+                }}
+              />
+
+              <TextField
+                fullWidth
+                label="Phone Number"
                 name="phone"
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                sx={{ '& .MuiOutlinedInput-root': { borderRadius: 2, pointerEvents: 'auto' } }}
-              />
-              <Box sx={{ position: 'relative', zIndex: 9999 }}>
-                <InputBase
-                  multiline
-                  rows={4}
-                  name="details"
-                  value={formData.message}
-                  onChange={(e: any) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your needs..."
-                  sx={{
-                    width: '100%',
-                    padding: '16px',
+                sx={{
+                  "& .MuiOutlinedInput-root": {
                     borderRadius: 2,
-                    border: '1px solid #ccc',
-                    fontSize: '1rem',
-                    fontFamily: 'inherit',
-                  }}
+                    pointerEvents: "auto",
+                  },
+                }}
+              />
+
+              <Box sx={{ position: "relative", zIndex: 9999 }}>
+                <textarea
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Details"
+                  className="details-textarea"
                 />
               </Box>
+
               <Button
                 type="submit"
                 variant="contained"
                 size="large"
-                sx={{ py: 2, display: "flex", mx: "auto", width: 480, borderRadius: 2, bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontWeight: 600, fontSize: '1.1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif', textTransform: 'none' }}
+                sx={{
+                  py: 2,
+                  display: "flex",
+                  mx: "auto",
+                  width: "100%",
+                  borderRadius: 2,
+                  bgcolor: "#2563EB",
+                  "&:hover": { bgcolor: "#1D4ED8" },
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  fontFamily:
+                    "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+                  textTransform: "none",
+                }}
               >
                 Send inquiry
               </Button>
-              <Typography component="p" align="center" sx={{ fontSize: '1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif', fontWeight: 300, color: '#666666', mt: 2 }}>
+
+              <Typography
+                component="h1"
+                gutterBottom
+                align="center"
+                sx={{
+                  fontSize: "1rem",
+                  fontFamily: "Inter, -apple-system, sans-serif",
+                  fontWeight: 300,
+                  color: "#666666",
+                }}
+              >
                 We'll get back to you within 24 hours.
               </Typography>
             </Box>
           </Box>
         </Paper>
 
-        <Box sx={{ flex: 1, mt: 2, display: 'flex', flexDirection: 'column', gap: 3 }}>
-          <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, fontFamily: 'Inter, -apple-system, sans-serif' }}>
-            Before you contact us
-          </Typography>
-          
-          <Link href="/user-guide" style={{ textDecoration: 'none' }}>
-            <Paper 
-              elevation={0} 
-              sx={{ 
-                p: 3, 
-                borderRadius: 2, 
-                border: '1px solid #E0E0E0',
-                '&:hover': { borderColor: '#2563EB', bgcolor: '#f0f7ff' },
-                cursor: 'pointer',
-                transition: 'all 0.2s'
+        <Box
+          sx={{
+            width: { xs: "100%", md: 480 },
+            flexShrink: 0,
+            mx: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+          }}
+        >
+          <Box
+            sx={{
+              pt: { xs: 2, md: 22 },
+              borderBottom: "2px solid #E0E0E0",
+              pb: 4,
+              width: "100%",
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+              <MenuBookIcon sx={{ color: '#3D3D3D' }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  fontFamily: "Inter, -apple-system, sans-serif",
+                  mb: 0,
+                  pl: 2
+                }}
+              >
+                User Guide
+              </Typography>
+            </Box>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#666",
+                mb: 2,
+                pl: 6,
+                fontFamily: "Inter, -apple-system, sans-serif",
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                <Box sx={{ 
-                  width: 48, 
-                  height: 48, 
-                  borderRadius: 2, 
-                  bgcolor: '#E3F2FD',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}>
-                  <MenuBookIcon sx={{ color: '#2563EB' }} />
-                </Box>
-                <Box sx={{ flex: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 600, fontFamily: 'Inter, -apple-system, sans-serif', mb: 0.5 }}>
-                    User Guide
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Inter, -apple-system, sans-serif' }}>
-                    Knowledgebase for all Notifly customers.
-                  </Typography>
-                </Box>
-                <ArrowForwardIcon sx={{ color: '#2563EB', mt: 1 }} />
-              </Box>
-            </Paper>
-          </Link>
+              Knowledgebase for all Scaleworks customers.
+            </Typography>
+            <Typography
+              component="a"
+              href="/user-guide"
+              sx={{
+                pl: 6,
+                color: "#2563EB",
+                textDecoration: "none",
+                fontFamily: "Inter, -apple-system, sans-serif",
+                fontWeight: 500,
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              View User Guide →
+            </Typography>
+          </Box>
 
-          <Link href="/plans" style={{ textDecoration: 'none' }}>
-            <Paper 
-              elevation={0} 
-              sx={{ 
-                p: 3, 
-                borderRadius: 2, 
-                border: '1px solid #E0E0E0',
-                '&:hover': { borderColor: '#2563EB', bgcolor: '#f0f7ff' },
-                cursor: 'pointer',
-                transition: 'all 0.2s'
+          <Box
+            sx={{
+              borderBottom: "2px solid #E0E0E0",
+              pb: 4,
+              width: "100%",
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+              <DescriptionIcon sx={{ color: '#3D3D3D' }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  fontFamily: "Inter, -apple-system, sans-serif",
+                  mb: 0,
+                  pl: 2
+                }}
+              >
+                Plans
+              </Typography>
+            </Box>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#666",
+                mb: 2,
+                pl: 6,
+                fontFamily: "Inter, -apple-system, sans-serif",
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                <Box sx={{ 
-                  width: 48, 
-                  height: 48, 
-                  borderRadius: 2, 
-                  bgcolor: '#FFF3E0',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}>
-                  <AttachMoneyIcon sx={{ color: '#F57C00' }} />
-                </Box>
-                <Box sx={{ flex: 1 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 600, fontFamily: 'Inter, -apple-system, sans-serif', mb: 0.5 }}>
-                    Plans & Pricing
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Inter, -apple-system, sans-serif' }}>
-                    Choose the plan that fits your needs.
-                  </Typography>
-                </Box>
-                <ArrowForwardIcon sx={{ color: '#2563EB', mt: 1 }} />
-              </Box>
-            </Paper>
-          </Link>
+              Plans tailored to your scale and use case.
+            </Typography>
+            <Typography
+              component="a"
+              href="/plans"
+              sx={{
+                pl: 6,
+                color: "#2563EB",
+                textDecoration: "none",
+                fontFamily: "Inter, -apple-system, sans-serif",
+                fontWeight: 500,
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              View Plans →
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Container>

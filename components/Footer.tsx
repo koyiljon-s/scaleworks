@@ -7,9 +7,9 @@ export default function Footer() {
       component="footer" 
       sx={{ 
         py: 3, 
-        px: 2, 
+        px: 14, 
         mt: 'auto',
-        textAlign: 'center', 
+        textAlign: 'left', 
         borderTop: 1, 
         borderColor: 'divider',
         bgcolor: '#f9fafb'
@@ -18,7 +18,7 @@ export default function Footer() {
       <Typography 
         variant="body2" 
         color="text.secondary"
-        sx ={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif', fontSize: '0.85rem', fontWeight: 500 }}
+        sx ={{fontFamily: 'Inter, -apple-system, sans-serif', fontSize: '1rem', fontWeight: 600 }}
         >
         © {new Date().getFullYear()} Scaleworks. All rights reserved.
       </Typography>
