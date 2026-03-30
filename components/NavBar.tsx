@@ -25,11 +25,12 @@ export default function Navbar() {
 
         {/* Right side buttons */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Button component={Link} href="/login" sx={{ textTransform: 'none', fontWeight: '650', fontSize: '1rem', color: '#3D3D3D', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
-            Login
-          </Button>
-          <Button component={Link} href="/contact" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontSize: '1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
-            Contact Sales
+            {/*<Button component={Link} href="/login" sx={{ textTransform: 'none', fontWeight: '650', fontSize: '1rem', color: '#3D3D3D', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
+              Login
+            </Button>
+            */}
+          <Button component="a" href="#contact" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontSize: '1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
+            Contact
           </Button>
         </Box>
 

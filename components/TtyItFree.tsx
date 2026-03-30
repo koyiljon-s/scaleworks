@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import Link from "next/link";
 
 export default function TryItFree() {
   return (
@@ -39,8 +38,8 @@ export default function TryItFree() {
         Leave an inquiry and a specialist will reach out within 24 hours.
       </Typography>
       <Button
-        component={Link}
-        href="/contact"
+        component="a"
+        href="#contact"
         variant="contained"
         size="large"
         sx={{
