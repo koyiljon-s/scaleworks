@@ -52,11 +52,11 @@ export default function About() {
       <Typography
         sx={{
           pb: 2,
-          maxWidth: "640px",
+          maxWidth: "650px",
           fontSize: "1.25rem",
           fontFamily: "Inter, -apple-system, sans-serif",
-          color: "#3D3D3D",
-          fontWeight: 500,
+          color: "#666666",
+          fontWeight: 600,
           lineHeight: 1.6,
         }}
       >

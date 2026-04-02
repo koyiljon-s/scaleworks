@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
@@ -9,12 +10,22 @@ import Link from 'next/link';
 import NavLinks from './NavLinks';
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <AppBar position="sticky" color="default" elevation={0} sx={{ bgcolor: 'white' }}>
+    <AppBar position="sticky" color="default" elevation={0} sx={{ bgcolor: 'white', borderBottom: scrolled ? '1px solid #E5E7EB' : 'none' }}>
       <Toolbar disableGutters sx={{ justifyContent: 'space-between', px: 14 }}>
 
         {/* Logo */}
-        <Typography fontWeight="700" component="a" href="/" sx={{fontFamily: 'var(--font-outfit)', fontSize: '1.5rem', letterSpacing: '-0.02em', color: '#2563EB'}}>
+        <Typography fontWeight="700" component="a" href="/" sx={{fontFamily: 'Inter, sans-serif', fontSize: '1.4rem', letterSpacing: '-0.03em', color: '#2563EB'}}>
           Scaleworks
         </Typography>
 
