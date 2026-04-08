@@ -7,7 +7,7 @@ export default function TryItFree() {
     <Box
       sx={{
         display: "flex",
-        maxHeight: "800px",
+        maxHeight: "600px",
         flexDirection: "column",
         alignItems: "center",
         gap: 2,
@@ -39,7 +39,7 @@ export default function TryItFree() {
       </Typography>
       <Button
         component="a"
-        href="#contact"
+        href="/contact"
         variant="contained"
         size="large"
         sx={{

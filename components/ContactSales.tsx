@@ -230,7 +230,7 @@ export default function ContactSales() {
 
         <Box
           sx={{
-            width: { xs: "100%", md: 480 },
+            width: { xs: "100%", md: 450 },
             flexShrink: 0,
             mx: "auto",
             display: "flex",

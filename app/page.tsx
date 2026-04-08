@@ -25,10 +25,8 @@ export default function Home() {
       <NavBar />
       <About />
       <Services />
-      <Box id="contact" sx={{ flexGrow: 1 }}>
-        <ContactSales />
-      </Box>
       <FAQ />
+      <TryItFree />
     </Box>
   );
 }

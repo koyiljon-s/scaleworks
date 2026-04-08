@@ -40,7 +40,7 @@ export default function Navbar() {
               Login
             </Button>
             */}
-          <Button component="a" href="#contact" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontSize: '1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
+          <Button component="a" href="/contact" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontSize: '1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
             Contact
           </Button>
         </Box>

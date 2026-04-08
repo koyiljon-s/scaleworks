@@ -56,7 +56,7 @@ export default function About() {
       {/* CTA */}
       <Button
         component="a"
-        href="#contact"
+        href="/contact"
         variant="contained"
         size="large"
         sx={{

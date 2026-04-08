@@ -5,10 +5,11 @@ import Button from '@mui/material/Button';
 import Link from 'next/link';
 
 const navItems = [
-  { label: 'About',      href: '/about' },
-  { label: 'Solution',  href: '/solutions' },
-  { label: 'Plans',      href: '/guide' },
-  { label: 'User Guide', href: '/blog' },
+  { label: 'Why Scaleworks',      href: '/whyscaleworks' },
+  { label: 'Products',      href: '/products' },
+  { label: 'Solutions',  href: '/solutions' },
+  { label: 'Pricing', href: '/price' },
+  { label: 'Resources', href: '/resources' },
 ];
 
 export default function NavLinks() {
