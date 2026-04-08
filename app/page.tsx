@@ -6,6 +6,7 @@ import ContactSales from "@/components/ContactSales";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import TryItFree from '@/components/TtyItFree';
+import Services from "@/components/Services";
 import { Box } from "@mui/material";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh", bgcolor: scrolled ? '#F8FAFC' : 'white' }}>
       <NavBar />
       <About />
-      <TryItFree />
+      <Services />
       <Box id="contact" sx={{ flexGrow: 1 }}>
         <ContactSales />
       </Box>
