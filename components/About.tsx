@@ -17,18 +17,6 @@ export default function About() {
         textAlign: "center",
       }}
     >
-      {/* Subtitle */}
-      <Typography
-        sx={{
-          fontSize: "0.95rem",
-          fontFamily: "Inter, -apple-system, sans-serif",
-          color: "#3D3D3D",
-          fontWeight: 550,
-          letterSpacing: "0.05em",
-        }}
-      >
-        Hiring Automation Platform
-      </Typography>
 
       {/* Main Heading */}
       <Typography
