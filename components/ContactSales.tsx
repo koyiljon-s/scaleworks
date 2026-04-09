@@ -44,7 +44,7 @@ export default function ContactSales() {
           sx={{
             fontWeight: 700,
             fontSize: "2.7rem",
-            fontFamily: "Inter, -apple-system, sans-serif",
+            fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
           Considering adoption?
@@ -54,7 +54,7 @@ export default function ContactSales() {
           sx={{
             fontWeight: 700,
             fontSize: "2.7rem",
-            fontFamily: "Inter, -apple-system, sans-serif",
+            fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
           Talk to the Scaleworks team first
@@ -87,7 +87,7 @@ export default function ContactSales() {
             align="left"
             sx={{
               fontFamily:
-                "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+                "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               fontWeight: 600,
               mb: 4,
             }}
@@ -204,7 +204,7 @@ export default function ContactSales() {
                   fontWeight: 600,
                   fontSize: "1.1rem",
                   fontFamily:
-                    "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+                    "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   textTransform: "none",
                 }}
               >
@@ -217,7 +217,7 @@ export default function ContactSales() {
                 align="center"
                 sx={{
                   fontSize: "1rem",
-                  fontFamily: "Inter, -apple-system, sans-serif",
+                  fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   fontWeight: 300,
                   color: "#666666",
                 }}
@@ -252,7 +252,7 @@ export default function ContactSales() {
                 variant="h6"
                 sx={{
                   fontWeight: 600,
-                  fontFamily: "Inter, -apple-system, sans-serif",
+                  fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   mb: 0,
                   pl: 2
                 }}
@@ -266,7 +266,7 @@ export default function ContactSales() {
                 color: "#666",
                 mb: 2,
                 pl: 6,
-                fontFamily: "Inter, -apple-system, sans-serif",
+                fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               }}
             >
               Knowledgebase for all Scaleworks customers.
@@ -278,7 +278,7 @@ export default function ContactSales() {
                 pl: 6,
                 color: "#2563EB",
                 textDecoration: "none",
-                fontFamily: "Inter, -apple-system, sans-serif",
+                fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                 fontWeight: 500,
                 "&:hover": { textDecoration: "underline" },
               }}
@@ -300,7 +300,7 @@ export default function ContactSales() {
                 variant="h6"
                 sx={{
                   fontWeight: 600,
-                  fontFamily: "Inter, -apple-system, sans-serif",
+                  fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   mb: 0,
                   pl: 2
                 }}
@@ -314,7 +314,7 @@ export default function ContactSales() {
                 color: "#666",
                 mb: 2,
                 pl: 6,
-                fontFamily: "Inter, -apple-system, sans-serif",
+                fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               }}
             >
               Plans tailored to your scale and use case.
@@ -326,7 +326,7 @@ export default function ContactSales() {
                 pl: 6,
                 color: "#2563EB",
                 textDecoration: "none",
-                fontFamily: "Inter, -apple-system, sans-serif",
+                fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                 fontWeight: 500,
                 "&:hover": { textDecoration: "underline" },
               }}

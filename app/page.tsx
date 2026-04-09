@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import NavBar from "@/components/NavBar";
-import ContactSales from "@/components/ContactSales";
 import About from "@/components/About";
-import FAQ from "@/components/FAQ";
 import TryItFree from '@/components/TtyItFree';
 import Services from "@/components/Services";
 import { Box } from "@mui/material";
@@ -25,7 +23,6 @@ export default function Home() {
       <NavBar />
       <About />
       <Services />
-      <FAQ />
       <TryItFree />
     </Box>
   );

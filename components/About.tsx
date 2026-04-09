@@ -23,7 +23,8 @@ export default function About() {
         sx={{
           maxWidth: "900px",
           fontSize: { xs: "3.25rem", md: "4.8rem" },
-          fontFamily: "Inter, -apple-system, sans-serif",
+          fontFamily:
+            "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           fontWeight: 700,
           lineHeight: 1.2,
           letterSpacing: "-0.02em",
@@ -42,7 +43,8 @@ export default function About() {
           pb: 2,
           maxWidth: "650px",
           fontSize: "1.25rem",
-          fontFamily: "Inter, -apple-system, sans-serif",
+          fontFamily:
+            "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           color: "#666666",
           fontWeight: 600,
           lineHeight: 1.6,
@@ -68,7 +70,7 @@ export default function About() {
           fontWeight: 600,
           fontSize: "1rem",
           fontFamily:
-            "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+            "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           textTransform: "none",
           color: "white",
         }}

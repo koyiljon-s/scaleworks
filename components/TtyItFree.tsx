@@ -19,7 +19,7 @@ export default function TryItFree() {
       <Typography
         sx={{
           fontSize: "3.125rem",
-          fontFamily: "Inter, -apple-system, sans-serif",
+          fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           color: "#FFFFFF",
           fontWeight: 700,
         }}
@@ -30,7 +30,7 @@ export default function TryItFree() {
         sx={{
           pb: 4,
           fontSize: "1.4rem",
-          fontFamily: "Inter, -apple-system, sans-serif",
+          fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           color: "#FFFFFF",
           fontWeight: 500,
         }}
@@ -49,7 +49,7 @@ export default function TryItFree() {
           background: 'white',
           fontWeight: 700,
           fontSize: "1rem",
-          fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+          fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           textTransform: "none",
           color: '#3D3D3D'
         }}

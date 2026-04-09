@@ -86,7 +86,7 @@ export default function Services() {
               fontSize: "2.2rem",
               fontWeight: 700,
               fontFamily:
-                "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+                "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               mb: 2,
             }}
           >

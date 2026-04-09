@@ -44,7 +44,7 @@ export default function ContactSales() {
           sx={{
             fontWeight: 700,
             fontSize: "2.7rem",
-            fontFamily: "Inter, -apple-system, sans-serif",
+            fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
           Considering adoption?
@@ -54,7 +54,7 @@ export default function ContactSales() {
           sx={{
             fontWeight: 700,
             fontSize: "2.7rem",
-            fontFamily: "Inter, -apple-system, sans-serif",
+            fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
           Talk to the Scaleworks team first
@@ -87,7 +87,7 @@ export default function ContactSales() {
             align="left"
             sx={{
               fontFamily:
-                "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+                "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               fontWeight: 600,
               mb: 4,
             }}
@@ -204,7 +204,7 @@ export default function ContactSales() {
                   fontWeight: 600,
                   fontSize: "1.1rem",
                   fontFamily:
-                    "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+                    "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   textTransform: "none",
                 }}
               >
@@ -217,7 +217,7 @@ export default function ContactSales() {
                 align="center"
                 sx={{
                   fontSize: "1rem",
-                  fontFamily: "Inter, -apple-system, sans-serif",
+                  fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   fontWeight: 300,
                   color: "#666666",
                 }}

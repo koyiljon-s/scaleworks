@@ -18,7 +18,7 @@ export default function Footer() {
       <Typography 
         variant="body2" 
         color="text.secondary"
-        sx ={{fontFamily: 'Inter, -apple-system, sans-serif', fontSize: '1rem', fontWeight: 600 }}
+        sx ={{fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: '1rem', fontWeight: 600 }}
         >
         © {new Date().getFullYear()} Scaleworks. All rights reserved.
       </Typography>

@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Why Scaleworks',      href: '/whyscaleworks' },
   { label: 'Products',      href: '/products' },
   { label: 'Solutions',  href: '/solutions' },
-  { label: 'Pricing', href: '/price' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Resources', href: '/resources' },
 ];
 
@@ -22,7 +22,7 @@ export default function NavLinks() {
           key={item.href} 
           component={Link} 
           href={item.href}
-          sx={{ textTransform: 'none', fontWeight: '650', fontSize: '1rem', color: '#3D3D3D', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
+          sx={{ textTransform: 'none', fontWeight: '650', fontSize: '1rem', color: '#3D3D3D', fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>
            {item.label}
         </Button>
       ))}

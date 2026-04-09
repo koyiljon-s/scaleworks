@@ -25,7 +25,7 @@ export default function Navbar() {
       <Toolbar disableGutters sx={{ justifyContent: 'space-between', px: 14 }}>
 
         {/* Logo */}
-        <Typography fontWeight="700" component="a" href="/" sx={{fontFamily: 'Inter, sans-serif', fontSize: '1.4rem', letterSpacing: '-0.03em', color: '#2563EB'}}>
+        <Typography fontWeight="700" component="a" href="/" sx={{fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: '1.4rem', letterSpacing: '-0.03em', color: '#2563EB'}}>
           Scaleworks
         </Typography>
 
@@ -36,11 +36,11 @@ export default function Navbar() {
 
         {/* Right side buttons */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            {/*<Button component={Link} href="/login" sx={{ textTransform: 'none', fontWeight: '650', fontSize: '1rem', color: '#3D3D3D', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
+            {/*<Button component={Link} href="/login" sx={{ textTransform: 'none', fontWeight: '650', fontSize: '1rem', color: '#3D3D3D', fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>
               Login
             </Button>
             */}
-          <Button component="a" href="/contact" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontSize: '1rem', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' }}>
+          <Button component="a" href="/contact" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2563EB', '&:hover': { bgcolor: '#1D4ED8' }, fontSize: '1rem', fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>
             Contact
           </Button>
         </Box>
