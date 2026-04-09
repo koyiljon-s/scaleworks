@@ -38,13 +38,16 @@ const tiers: readonly Tier[] = [
     name: "Standard",
     description: "Perfect for testing recruiting automations on a small team.",
     pricingType: "fixed",
-    price: "$25",
+    price: "$30",
     cadence: "/ month",
     ctaLabel: "Start free trial",
     features: [
-      "Up to 2 concurrent hiring workflows",
-      "Automated interview scheduling",
-      "Email support",
+      "Recruitment homepage builer",
+      "Unlimited job postings",
+      "Application management",
+      "Interview scheduling",
+      "Customize announcement",
+      "Subdomain registration",
     ],
   },
   {
@@ -54,11 +57,16 @@ const tiers: readonly Tier[] = [
     price: "$50",
     cadence: "/ month",
     highlighted: true,
+    badge: "Recommended",
     ctaLabel: "Start free trial",
     features: [
-      "Unlimited hiring workflows",
-      "Team permissions & shared templates",
+      "All features of Standard plan",
       "Pipeline analytics dashboard",
+      "Templates",
+      "Surveys",
+      "Email and SMS notifications",
+      "Talent pool management",
+      "Real-time customer support",
     ],
   },
   {
@@ -68,9 +76,11 @@ const tiers: readonly Tier[] = [
     priceLabel: "Contact us",
     ctaLabel: "Talk to sales",
     features: [
-      "Territory & budget controls",
-      "HRIS + ATS integrations",
-      "Dedicated success partner",
+      "All features of Pro plan",
+      "Custom permissions for each role",
+      "AI document screening",
+      "Custom domain connection",
+      "Professional production support",
     ],
   },
 ];
@@ -80,23 +90,22 @@ export default function Pricing() {
     <Box
       component="section"
       sx={{
-        py: { xs: 10, md: 14 },
+        py: { xs: 10, md: 20 },
         px: 2,
       }}
     >
       <Container maxWidth="lg">
         <Stack spacing={2.5} textAlign="center" mb={{ xs: 6, md: 8 }}>
-          <Typography
-            component="h2"
-            sx={{
-              fontSize: { xs: "2.25rem", md: "3.25rem" },
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "#0f172a",
-            }}
-          >
-            Choose the plan that’s right for you
-          </Typography>
+        <Typography
+          color="text.primary"
+          sx={{
+            fontWeight: 700,
+            fontSize: "2.7rem",
+            fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          }}
+        >
+          Choose the plan that’s right for you
+        </Typography>
 
           <Typography
             sx={{
@@ -215,12 +224,13 @@ export default function Pricing() {
                           sx={{
                             height: 40,
                             px: 1,
-                            borderRadius: "10px",
+                            borderRadius: "6px",
                             border: "1px solid",
                             borderColor: "rgba(59,130,246,0.18)",
-                            bgcolor: "rgba(59,130,246,0.06)",
-                            color: "#2563eb",
-                            fontWeight: 700,
+                            bgcolor: "#f8fbff",
+                            color: "#3477ff",
+                            fontWeight: 600,
+                            fontSize: "0.75rem",
                             textTransform: "uppercase",
                             letterSpacing: "0.02em",
                           }}
@@ -310,7 +320,10 @@ export default function Pricing() {
 
                   <CardActions sx={{ px: 4, pb: 4, pt: 0 }}>
                     <Button
+                      component="a"
+                      href="/contact"
                       fullWidth
+                      disableRipple
                       size="large"
                       variant={isHighlighted ? "contained" : "outlined"}
                       sx={{

@@ -305,7 +305,7 @@ export default function ContactSales() {
                   pl: 2
                 }}
               >
-                Plans
+                Pricing
               </Typography>
             </Box>
             <Typography
@@ -321,7 +321,7 @@ export default function ContactSales() {
             </Typography>
             <Typography
               component="a"
-              href="/plans"
+              href="/pricing"
               sx={{
                 pl: 6,
                 color: "#2563EB",
@@ -331,7 +331,7 @@ export default function ContactSales() {
                 "&:hover": { textDecoration: "underline" },
               }}
             >
-              View Plans →
+              View Pricing →
             </Typography>
           </Box>
         </Box>
