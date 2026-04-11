@@ -150,7 +150,7 @@ export default function Pricing() {
                     width: "100%",
                     minHeight: {
                       xs: "auto",
-                      md: isHighlighted ? 580 : 520,
+                      md: isHighlighted ? 580 : isFirst ? 480 : 520,
                     },
                     display: "flex",
                     flexDirection: "column",
@@ -210,7 +210,7 @@ export default function Pricing() {
                         component="h3"
                         sx={{
                           fontSize: { xs: "1.75rem", md: "2rem" },
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: "#111827",
                         }}
                       >

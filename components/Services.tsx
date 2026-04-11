@@ -54,7 +54,7 @@ export default function Services() {
         background:
           "radial-gradient(circle at 70% 60%, #1e4fa3 0%, #020617 60%)",
         p: { xs: 4, md: 8 },
-        mt: { xs: 6, md: 10 },
+        mt: { xs: 6, md: 20 },
         color: "white",
       }}
     >

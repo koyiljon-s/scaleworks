@@ -6,14 +6,27 @@ export default function TryItFree() {
   return (
     <Box
       sx={{
+        mt: 8,
+        mb: 8,
         display: "flex",
-        maxHeight: "600px",
+        width: "100%",
+        maxWidth: "1200px",
+        maxHeight: "500px",
         flexDirection: "column",
         alignItems: "center",
+        borderRadius: 5,
         gap: 2,
-        background: "linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)",
-        py: 14,
+        background: `
+          radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 35%),
+          radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08), transparent 40%),
+          linear-gradient(135deg, #2f6df6 0%, #2357df 55%, #1d4ed8 100%)
+        `,
+        boxShadow: "0 30px 80px rgba(29, 78, 216, 0.25)",
+        py: 10,
         px: 6,
+        mx: "auto",
+        fontFamily:
+          "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
       }}
     >
       <Typography

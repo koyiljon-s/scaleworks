@@ -1,14 +1,12 @@
 import NavBar from "@/components/NavBar";
-import Pricing from "@/components/Pricing";
-import FAQ from "@/components/FAQ";
+import WhyScaleworks from "@/components/WhyScaleworks";
 import TryItFree from "@/components/TtyItFree";
 
-export default function PricingPage() {
+export default function WhyScaleworksPage() {
   return (
     <main>
       <NavBar />
-      <Pricing />
-      <FAQ />
+      <WhyScaleworks />
       <TryItFree />
     </main>
   );
