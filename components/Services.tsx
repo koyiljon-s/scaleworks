@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Typography,
-  Stack,
-  Paper,
-  Divider,
-} from "@mui/material";
+import { Box, Typography, Stack, Paper } from "@mui/material";
 import DashboardCustomizeSharpIcon from "@mui/icons-material/DashboardCustomizeSharp";
 import DescriptionSharpIcon from "@mui/icons-material/DescriptionSharp";
 import NotificationsSharpIcon from "@mui/icons-material/NotificationsSharp";
@@ -28,11 +22,11 @@ const services: ServiceItem[] = [
     icon: DescriptionSharpIcon,
   },
   {
-    title: "Automated Email & SMS Notifications",
+    title: "Customize Announcement",
     icon: NotificationsSharpIcon,
   },
   {
-    title: "Interview Scheduling & Coordination",
+    title: "Interview Scheduling",
     icon: ModeCommentSharpIcon,
   },
   {
@@ -40,7 +34,7 @@ const services: ServiceItem[] = [
     icon: PeopleSharpIcon,
   },
   {
-    title: "Applicant Tracking System (ATS)",
+    title: "Talent Pool Management",
     icon: DashboardCustomizeSharpIcon,
   },
 ];
@@ -51,10 +45,20 @@ export default function Services() {
       component="section"
       sx={{
         width: "100%",
-        background:
-          "radial-gradient(circle at 70% 60%, #1e4fa3 0%, #020617 60%)",
-        p: { xs: 4, md: 8 },
-        mt: { xs: 6, md: 20 },
+        background: `
+        radial-gradient(ellipse at 50% 100%, rgba(96,165,250,0.35), transparent 60%),
+        radial-gradient(ellipse at 50% 90%, rgba(255,255,255,0.12), transparent 45%),
+        linear-gradient(
+          to top,
+          #020617 0%,
+          #0a1a3f 35%,
+          #1e3a8a 60%,
+          #3b82f6 80%,
+          #cfe8ff 100%
+        )
+      `,
+        p: { xs: 4, md: 18 },
+        mt: { xs: 6, md: 0 },
         color: "white",
       }}
     >
@@ -64,7 +68,7 @@ export default function Services() {
           flexDirection: { xs: "column", md: "row" },
           justifyContent: "center",
           alignItems: { xs: "flex-start", md: "stretch" },
-          gap: { xs: 4, md: 6 },
+          gap: { xs: 8, md: 12 },
           maxWidth: "1000px",
           mx: "auto",
           width: "100%",
@@ -83,7 +87,7 @@ export default function Services() {
         >
           <Typography
             sx={{
-              fontSize: "2.2rem",
+              fontSize: "2.33rem",
               fontWeight: 700,
               fontFamily:
                 "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -98,6 +102,8 @@ export default function Services() {
               color: "rgba(255,255,255,0.8)",
               maxWidth: 420,
               lineHeight: 1.6,
+              fontFamily:
+                "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
             }}
           >
             Explore the recruiting tools and workflows that help your team
@@ -141,6 +147,8 @@ export default function Services() {
                     fontWeight: 350,
                     color: "white",
                     mb: 0.5,
+                    fontFamily:
+                      "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   }}
                 >
                   {title}
