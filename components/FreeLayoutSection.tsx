@@ -45,7 +45,7 @@ export default function FreeLayoutSection() {
       <Typography
         sx={{
           color: "#1f2028",
-          fontWeight: 700, 
+          fontWeight: 600, 
           letterSpacing: "-0.03em", 
           lineHeight: 1.15, 
           textAlign: "center",

@@ -1,10 +1,31 @@
 "use client";
 import * as React from "react";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({});
+const FONT_FAMILY =
+  "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: FONT_FAMILY,
+    allVariants: {
+      fontFamily: FONT_FAMILY,
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          fontFamily: FONT_FAMILY,
+        },
+        "*, *::before, *::after": {
+          fontFamily: FONT_FAMILY,
+        },
+      },
+    },
+  },
+});
 
 export default function ThemeRegistry({
   children,

@@ -18,7 +18,7 @@ const services: ServiceItem[] = [
     icon: DashboardCustomizeSharpIcon,
   },
   {
-    title: "Job Posting & Candidate Management",
+    title: "Talent Pool Management",
     icon: DescriptionSharpIcon,
   },
   {
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
     icon: PeopleSharpIcon,
   },
   {
-    title: "Talent Pool Management",
+    title: "Job posting and Applicant Tracking",
     icon: DashboardCustomizeSharpIcon,
   },
 ];

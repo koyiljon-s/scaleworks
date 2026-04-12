@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "antd/dist/reset.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ThemeRegistry from "../components/ThemeRegistry";
 import Footer from "@/components/Footer";
@@ -42,7 +43,7 @@ export default function RootLayout({
       lang="en"
       className={`${pretendard.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className={`${pretendard.className} min-h-screen flex flex-col`}>
         <AppRouterCacheProvider>
           <ThemeRegistry>
             {children}

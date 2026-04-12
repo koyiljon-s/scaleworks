@@ -22,7 +22,6 @@ export default function Home() {
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh", bgcolor: scrolled ? '#F8FAFC' : 'white' }}>
       <NavBar />
       <About />
-      <TryItFree />
     </Box>
   );
 }
