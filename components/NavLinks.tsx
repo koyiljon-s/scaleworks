@@ -9,7 +9,6 @@ const navItems = [
   { label: 'Products',      href: '/products' },
   { label: 'Solutions',  href: '/solutions' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Resources', href: '/resources' },
 ];
 
 export default function NavLinks() {
