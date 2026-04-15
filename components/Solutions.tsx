@@ -30,7 +30,7 @@ export default function WhyScaleworks() {
             <Typography
               component="h1"
               sx={{
-                fontSize: { xs: "2rem", md: "3.25rem" },
+                fontSize: { xs: "2.2rem", md: "3.45rem" },
                 fontWeight: 700,
                 lineHeight: 1.4,
                 color: "black",

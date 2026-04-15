@@ -26,7 +26,7 @@ const services: ServiceItem[] = [
     icon: NotificationsSharpIcon,
   },
   {
-    title: "Interview Scheduling",
+    title: "Coordinate Interview Schedule",
     icon: ModeCommentSharpIcon,
   },
   {
