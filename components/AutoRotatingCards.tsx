@@ -1,252 +1,345 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { Box, Typography } from "@mui/material";
 
-const CARD_DURATION = 4000; // ms each card stays active
+const CARD_DURATION = 4000;
+const FONT_FAMILY =
+  "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
-interface CardData {
+type CardData = {
   number: string;
   title: string;
   description: string;
-}
+  features: string[];
+};
 
 const cards: CardData[] = [
   {
     number: "01",
-    title: "Talent Sourcing",
-    description:
-      "Identify and attract top candidates through intelligent sourcing channels and AI-powered matching.",
+    title: "Start up Hiring",
+    description: "Launch and hire without a recruiting team.",
+    features: [
+      "Instant career page",
+      "Simple pipelines",
+      "Fast decision-making",
+    ],
   },
   {
     number: "02",
-    title: "Applicant Tracking",
-    description:
-      "Manage every stage of your pipeline with a unified view of every candidate and their progress.",
+    title: "Scaling Teams",
+    description: "Bring order to growing hiring complexity.",
+    features: [
+      "Structured workflows",
+      "Hiring manager collaboration",
+      "Interview standardization",
+    ],
   },
   {
     number: "03",
-    title: "Interview Scheduling",
-    description:
-      "Eliminate back-and-forth with automated scheduling that syncs directly to your team's calendars.",
+    title: "High-Volume Hiring",
+    description: "Handle hundreds of candidates without chaos.",
+    features: [
+      "Bulk actions",
+      "Automated screening",
+      "Pipeline filtering",
+    ],
   },
   {
     number: "04",
-    title: "Offer & Onboarding",
-    description:
-      "Send offers, collect e-signatures, and kick off onboarding workflows — all from one place.",
+    title: "Employer Branding",
+    description: "Turn your careers page into a hiring engine.",
+    features: [
+      "No-code career site",
+      "Custom domain",
+      "Candidate experience",
+    ],
   },
 ];
 
-// Reusable typography styles (centralized for consistency)
-const typographyStyles = {
-  fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" as const,
-} as const;
-
-const sectionStyles = {
-  width: "100%",
-  py: { xs: 8, md: 14 },
-  px: { xs: 3, md: 8 },
-  background: "#ffffff",
-  color: "#111111",
-} as const;
-
-const containerStyles = {
-  maxWidth: 1200,
-  mx: "auto",
-} as const;
-
-const headingStyles = {
-  fontSize: { xs: "1.8rem", md: "2.4rem" },
-  fontWeight: 700,
-  mb: 2,
-  ...typographyStyles,
-} as const;
-
-const subtitleStyles = {
-  fontSize: { xs: "1rem", md: "1.1rem" },
-  color: "#6b7280",
-  mb: 8,
-  maxWidth: 520,
-  lineHeight: 1.7,
-  ...typographyStyles,
-} as const;
-
-const labelsGridStyles = {
-  display: "grid",
-  gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
-  gap: 8,
-  mb: 2,
-} as const;
-
-const descriptionsGridStyles = {
-  display: "grid",
-  gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
-  gap: 8,
-} as const;
-
-const progressContainerStyles = {
-  width: "100%",
-  height: "3px",
-  backgroundColor: "#e5e7eb",
-  borderRadius: "2px",
-} as const;
-
-const progressBarStyles = {
-  height: "100%",
-  width: "100%",
-  background: "linear-gradient(90deg, #3b82f6, #60a5fa)",
-  borderRadius: "2px",
-  transformOrigin: "left center",
-  animation: `progressFill ${CARD_DURATION}ms linear forwards`,
-} as const;
-
-interface CardLabelProps {
-  card: CardData;
-  isActive: boolean;
-  onClick: () => void;
-  animKey: number;
-}
-
-const CardLabel: React.FC<CardLabelProps> = React.memo(({ card, isActive, onClick, animKey }) => (
-  <Box
-    onClick={onClick}
-    onKeyDown={(e) => e.key === "Enter" && onClick()}
-    tabIndex={isActive ? -1 : 0}
-    role="button"
-    aria-label={`Select ${card.title}`}
-    sx={{
-      cursor: isActive ? "default" : "pointer",
-    }}
-  >
-    <Typography
-      sx={{
-        fontSize: { xs: "1.4rem", md: "1.8rem" },
-        fontWeight: 700,
-        color: isActive ? "#3b82f6" : "#d1d5db",
-        lineHeight: 1,
-        mb: 0.75,
-        ...typographyStyles,
-        transition: "color 0.3s ease",
-      }}
-    >
-      {card.number}
-    </Typography>
-
-    <Typography
-      sx={{
-        fontSize: { xs: "1.1rem", md: "1.2rem" },
-        fontWeight: 600,
-        color: isActive ? "#111111" : "#9ca3af",
-        mb: 1.5,
-        ...typographyStyles,
-        transition: "color 0.3s ease",
-      }}
-    >
-      {card.title}
-    </Typography>
-
-    {/* Progress bar - only renders when active */}
-    <Box sx={progressContainerStyles}>
-      {isActive && (
-        <Box
-          key={animKey}
-          sx={{
-            ...progressBarStyles,
-            "@keyframes progressFill": {
-              from: { transform: "scaleX(0)" },
-              to: { transform: "scaleX(1)" },
-            },
-          }}
-        />
-      )}
-    </Box>
-  </Box>
-));
-
-interface CardDescriptionProps {
-  card: CardData;
-  isActive: boolean;
-}
-
-const CardDescription: React.FC<CardDescriptionProps> = React.memo(({ card, isActive }) => (
-  <Box>
-    <Typography
-      sx={{
-        fontSize: { xs: "1rem", md: "1.2rem" },
-        color: isActive ? "#6b7280" : "#d1d5db",
-        lineHeight: 1.6,
-        ...typographyStyles,
-        transition: "color 0.3s ease",
-      }}
-    >
-      {card.description}
-    </Typography>
-  </Box>
-));
-
 export default function AutoRotatingCards() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [phase, setPhase] = useState(0); // Used to trigger progress bar animation
-
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  const advanceToNext = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % cards.length);
-    setPhase((prev) => prev + 1);
-  }, []);
+  const [phase, setPhase] = useState(0);
+  const activeCard = cards[activeIndex];
 
   useEffect(() => {
-    intervalRef.current = setInterval(advanceToNext, CARD_DURATION);
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % cards.length);
+      setPhase((currentPhase) => currentPhase + 1);
+    }, CARD_DURATION);
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [advanceToNext]);
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   const handleCardSelect = (index: number) => {
     if (index === activeIndex) return;
+
     setActiveIndex(index);
-    setPhase((prev) => prev + 1);
+    setPhase((currentPhase) => currentPhase + 1);
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
-      <Box sx={containerStyles}>
-        {/* Header */}
-        <Typography sx={headingStyles}>How it works</Typography>
-        <Typography sx={subtitleStyles}>
-          A streamlined process that takes your hiring from first touchpoint to day one.
+    <Box
+      component="section"
+      sx={{
+        width: "100%",
+        py: { xs: 8, md: 14 },
+        px: { xs: 3, md: 8 },
+        bgcolor: "#ffffff",
+        color: "#111111",
+      }}
+    >
+      <Box sx={{ maxWidth: 1200, mx: "auto" }}>
+        <Typography
+          sx={{
+            fontSize: { xs: "2.4rem", sm: "2.8rem", md: "3.2rem", lg: "2.6rem" },
+            fontWeight: 600,
+            textAlign: "center",
+            mb: 2,
+            fontFamily: FONT_FAMILY,
+          }}
+        >
+          Solutions for Every Stage of Hiring
         </Typography>
 
-        {/* Labels + Progress Bars Row */}
-        <Box sx={labelsGridStyles}>
-          {cards.map((card, index) => {
-            const isActive = index === activeIndex;
-            return (
-              <CardLabel
-                key={card.number}
-                card={card}
-                isActive={isActive}
-                onClick={() => handleCardSelect(index)}
-                animKey={phase}
+        <Typography
+          sx={{
+            fontSize: { xs: "1rem", md: "1.1rem" },
+            color: "#6b7280",
+            mb: 4,
+            maxWidth: 520,
+            mx: "auto",
+            textAlign: "center",
+            lineHeight: 1.7,
+            fontFamily: FONT_FAMILY,
+          }}
+        >
+          Powerful workflows designed to support startups, growing teams, and enterprise-scale recruitment.
+        </Typography>
+
+        <Box
+          aria-live="polite"
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              md: "repeat(2, minmax(0, 1fr))",
+            },
+            gap: { xs: 2, md: 3 },
+            mb: { xs: 6, md: 8 },
+            alignItems: "stretch",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: 600,
+              height: { xs: 280, sm: 340, md: 380 },
+              maxHeight: 380,
+              justifySelf: "center",
+              borderRadius: "8px",
+              bgcolor: "#f3f4f6",
+              overflow: "hidden",
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {activeCard.number === "04" && (
+              <Image
+                src="/recruitment-page-builder.png"
+                alt="Recruitment website builder layout tools"
+                width={1422}
+                height={798}
+                sizes="(max-width: 768px) 100vw, 600px"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
               />
-            );
-          })}
+            )}
+          </Box>
+
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: 600,
+              height: { xs: 280, sm: 340, md: 380 },
+              maxHeight: 380,
+              justifySelf: "center",
+
+
+              p: { xs: 3, md: 4 },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              gap: 1.5,
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "1.1rem", md: "1.3rem" },
+                fontWeight: 700,
+                lineHeight: 1,
+                color: "#3b82f6",
+                fontFamily: FONT_FAMILY,
+              }}
+            >
+              {activeCard.number}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "1.9rem", md: "2.1rem" },
+                fontWeight: 600,
+                lineHeight: 1.2,
+                color: "#111111",
+                fontFamily: FONT_FAMILY,
+              }}
+            >
+              {activeCard.title}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "1.05rem", md: "1.2rem" },
+                pb: "1.4rem",
+                lineHeight: 1.65,
+                color: "#4b5563",
+                fontFamily: FONT_FAMILY,
+                borderBottom: "1px solid #e5e7eb",
+              }}
+            >
+              {activeCard.description}
+            </Typography>
+            <Box
+              component="ul"
+              sx={{
+                display: "grid",
+                gap: 1,
+                listStyle: "none",
+                py: 2,
+                m: 0,
+              }}
+            >
+              {activeCard.features.map((feature) => (
+                <Box
+                  key={feature}
+                  component="li"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    color: "#71717a",
+                    fontFamily: FONT_FAMILY,
+                    fontSize: { xs: "0.95rem", md: "1.1rem" },
+                    fontWeight: 500,
+                    lineHeight: 1.4,
+                    py: 0.7,
+                  }}
+                >
+                  <CheckRoundedIcon
+                    sx={{
+                      color: "#3b82f6",
+                      fontSize: 20,
+                      flexShrink: 0,
+                    }}
+                  />
+                  {feature}
+                </Box>
+              ))}
+            </Box>
+          </Box>
         </Box>
 
-        {/* Descriptions Row */}
-        <Box sx={descriptionsGridStyles}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
+            gap: 8,
+            mb: 2,
+          }}
+        >
           {cards.map((card, index) => {
             const isActive = index === activeIndex;
+
             return (
-              <CardDescription
+              <Box
                 key={card.number}
-                card={card}
-                isActive={isActive}
-              />
+                role="button"
+                tabIndex={isActive ? -1 : 0}
+                aria-label={`Select ${card.title}`}
+                onClick={() => handleCardSelect(index)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    handleCardSelect(index);
+                  }
+                }}
+                sx={{
+                  cursor: isActive ? "default" : "pointer",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "5px",
+                    bgcolor: "#e5e7eb",
+                    borderRadius: "999px",
+                    mb: 1.5,
+                  }}
+                >
+                  {isActive && (
+                    <Box
+                      key={phase}
+                      sx={{
+                        height: "100%",
+                        width: "100%",
+                        background: "linear-gradient(90deg, #3b82f6, #60a5fa)",
+                        borderRadius: "999px",
+                        transformOrigin: "left center",
+                        animation: `progressFill ${CARD_DURATION}ms linear forwards`,
+                        "@keyframes progressFill": {
+                          from: { transform: "scaleX(0)" },
+                          to: { transform: "scaleX(1)" },
+                        },
+                      }}
+                    />
+                  )}
+                </Box>
+
+                <Typography
+                  sx={{
+                    fontSize: { xs: "1.05rem", md: "1.15rem" },
+                    fontWeight: 500,
+                    color: "#111111",
+                    lineHeight: 1,
+                    mb: 0.75,
+                    fontFamily: FONT_FAMILY,
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  {card.number}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    fontSize: { xs: "1.2rem", md: "1.4rem" },
+                    fontWeight: 600,
+                    color: isActive ? "#111111" : "#9ca3af",
+                    mb: 1.5,
+                    fontFamily: FONT_FAMILY,
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  {card.title}
+                </Typography>
+              </Box>
             );
           })}
         </Box>
