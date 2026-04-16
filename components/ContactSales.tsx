@@ -222,7 +222,7 @@ export default function ContactSales() {
                   color: "#666666",
                 }}
               >
-                We'll get back to you within 24 hours.
+                We&apos;ll get back to you within 24 hours.
               </Typography>
             </Box>
           </Box>
@@ -273,7 +273,7 @@ export default function ContactSales() {
             </Typography>
             <Typography
               component="a"
-              href="/user-guide"
+              href="/#faq"
               sx={{
                 pl: 6,
                 color: "#2563EB",
@@ -283,7 +283,7 @@ export default function ContactSales() {
                 "&:hover": { textDecoration: "underline" },
               }}
             >
-              View User Guide →
+              View FAQ →
             </Typography>
           </Box>
 

@@ -46,8 +46,10 @@ export default function RootLayout({
       <body className={`${pretendard.className} min-h-screen flex flex-col`}>
         <AppRouterCacheProvider>
           <ThemeRegistry>
-            {children}
-            <Footer />
+            <div className="flex min-h-screen flex-1 flex-col">
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </div>
           </ThemeRegistry>
         </AppRouterCacheProvider>
       </body>

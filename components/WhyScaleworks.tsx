@@ -1,25 +1,12 @@
 "use client";
 
-import { keyframes } from "@emotion/react";
 import {
   Box,
   Container,
   Typography,
   Stack,
-  Paper,
-  Divider,
 } from "@mui/material";
 import Button from "@mui/material/Button";
-
-const scrollKeyframes = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-`;
-
 
 export default function WhyScaleworks() {
   return (

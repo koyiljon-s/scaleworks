@@ -25,6 +25,11 @@ body {
     sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
 .details-textarea {
   width: 100%;
   padding: 16px;

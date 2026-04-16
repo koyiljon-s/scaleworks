@@ -76,7 +76,7 @@ export default function FAQ() {
               mb: 2,
             }}
           >
-            Contact us if you need more details. We'll get back to you quickly.
+            Contact us if you need more details. We&apos;ll get back to you quickly.
           </Typography>
         </Box>
 

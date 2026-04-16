@@ -46,18 +46,18 @@ export default function Services() {
       sx={{
         width: "100%",
         background: `
-        radial-gradient(ellipse at 50% 100%, rgba(96,165,250,0.35), transparent 60%),
-        radial-gradient(ellipse at 50% 90%, rgba(255,255,255,0.12), transparent 45%),
+        radial-gradient(ellipse at 50% 100%, rgba(59,130,246,0.25), transparent 60%),
+        radial-gradient(ellipse at 50% 90%, rgba(255,255,255,0.06), transparent 45%),
         linear-gradient(
           to top,
-          #020617 0%,
-          #0a1a3f 35%,
-          #1e3a8a 60%,
-          #3b82f6 80%,
-          #cfe8ff 100%
+          #000005 0%,
+          #03091f 35%,
+          #0d1f5c 60%,
+          #1d4ed8 80%,
+          #7ab8e8 100%
         )
       `,
-        p: { xs: 4, md: 18 },
+        p: { xs: 4, md: 8 },
         mt: { xs: 6, md: 0 },
         color: "white",
       }}

@@ -3,6 +3,7 @@ import Solutions from "@/components/Solutions";
 import TryItFree from "@/components/TtyItFree";
 import HiringNarrative from "@/components/HiringNarrative";
 import AutoRotatingCards from "@/components/AutoRotatingCards";
+import FAQ from "@/components/FAQ";
 
 export default function WhyScaleworksPage() {
   return (
@@ -11,6 +12,7 @@ export default function WhyScaleworksPage() {
       <Solutions />
       <HiringNarrative />
       <AutoRotatingCards />
+      <FAQ />
     </main>
   );
 }
