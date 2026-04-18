@@ -316,7 +316,7 @@ export default function TalentPoolSection() {
               color: "#0b1528",
             }}
           >
-            Talent pool exclusive to our company
+            Talent pool exclusive to your company
           </Typography>
 
           <Typography

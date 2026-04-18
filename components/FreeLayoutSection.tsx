@@ -74,6 +74,13 @@ export default function FreeLayoutSection() {
           borderRadius: "20px",
           px: { xs: 3, sm: 4, md: 6, lg: 8 },
           py: { xs: 5, sm: 6, md: 10 },
+          border: "1px solid rgba(59, 130, 246, 0.15)",
+          boxShadow: `
+            0 10px 15px -3px rgba(15, 23, 42, 0.08),
+            0 25px 50px -12px rgba(15, 23, 42, 0.12),
+            0 0 0 1px rgba(255,255,255, 0.6) inset,
+            0 4px 6px -1px rgba(59, 130, 246, 0.12)
+          `,
         }}
       >
         <Grid

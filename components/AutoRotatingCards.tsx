@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { Box, Typography } from "@mui/material";
 
@@ -62,7 +61,6 @@ const cards: CardData[] = [
 export default function AutoRotatingCards() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [phase, setPhase] = useState(0);
-  const activeCard = cards[activeIndex];
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -125,148 +123,10 @@ export default function AutoRotatingCards() {
         </Typography>
 
         <Box
-          aria-live="polite"
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "1fr",
-              md: "repeat(2, minmax(0, 1fr))",
-            },
-            gap: { xs: 2, md: 3 },
-            mb: { xs: 6, md: 8 },
-            alignItems: "stretch",
-            justifyContent: "center",
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              maxWidth: 600,
-              height: { xs: 280, sm: 340, md: 380 },
-              maxHeight: 380,
-              justifySelf: "center",
-              borderRadius: "8px",
-              bgcolor: "#f3f4f6",
-              overflow: "hidden",
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            {activeCard.number === "04" && (
-              <Image
-                src="/recruitment-page-builder.png"
-                alt="Recruitment website builder layout tools"
-                width={1422}
-                height={798}
-                sizes="(max-width: 768px) 100vw, 600px"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              />
-            )}
-          </Box>
-
-          <Box
-            sx={{
-              width: "100%",
-              maxWidth: 600,
-              height: { xs: 280, sm: 340, md: 380 },
-              maxHeight: 380,
-              justifySelf: "center",
-
-
-              p: { xs: 3, md: 4 },
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              gap: 1.5,
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: { xs: "1.1rem", md: "1.3rem" },
-                fontWeight: 700,
-                lineHeight: 1,
-                color: "#3b82f6",
-                fontFamily: FONT_FAMILY,
-              }}
-            >
-              {activeCard.number}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { xs: "1.9rem", md: "2.1rem" },
-                fontWeight: 600,
-                lineHeight: 1.2,
-                color: "#111111",
-                fontFamily: FONT_FAMILY,
-              }}
-            >
-              {activeCard.title}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { xs: "1.05rem", md: "1.2rem" },
-                pb: "1.4rem",
-                lineHeight: 1.65,
-                color: "#4b5563",
-                fontFamily: FONT_FAMILY,
-                borderBottom: "1px solid #e5e7eb",
-              }}
-            >
-              {activeCard.description}
-            </Typography>
-            <Box
-              component="ul"
-              sx={{
-                display: "grid",
-                gap: 1,
-                listStyle: "none",
-                py: 2,
-                m: 0,
-              }}
-            >
-              {activeCard.features.map((feature) => (
-                <Box
-                  key={feature}
-                  component="li"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1,
-                    color: "#71717a",
-                    fontFamily: FONT_FAMILY,
-                    fontSize: { xs: "0.95rem", md: "1.1rem" },
-                    fontWeight: 500,
-                    lineHeight: 1.4,
-                    py: 0.7,
-                  }}
-                >
-                  <CheckRoundedIcon
-                    sx={{
-                      color: "#3b82f6",
-                      fontSize: 20,
-                      flexShrink: 0,
-                    }}
-                  />
-                  {feature}
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        </Box>
-
-        <Box
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
-            gap: 8,
+            gap: { xs: 3, md: 8 },
             mb: 2,
           }}
         >
@@ -288,6 +148,7 @@ export default function AutoRotatingCards() {
                 }}
                 sx={{
                   cursor: isActive ? "default" : "pointer",
+                  pt: 10,
                 }}
               >
                 <Box
@@ -296,7 +157,7 @@ export default function AutoRotatingCards() {
                     height: "5px",
                     bgcolor: "#e5e7eb",
                     borderRadius: "999px",
-                    mb: 1.5,
+                    mb: 3,
                   }}
                 >
                   {isActive && (
@@ -337,13 +198,53 @@ export default function AutoRotatingCards() {
                     fontSize: { xs: "1.2rem", md: "1.4rem" },
                     fontWeight: 600,
                     color: isActive ? "#111111" : "#9ca3af",
-                    mb: 1.5,
+                    mb: 1.25,
                     fontFamily: FONT_FAMILY,
                     transition: "color 0.3s ease",
+                    py: 1.5,
                   }}
                 >
                   {card.title}
                 </Typography>
+
+                <Box
+                  component="ul"
+                  sx={{
+                    display: "grid",
+                    gap: 0.75,
+                    listStyle: "none",
+                    p: 0,
+                    m: 0,
+                  }}
+                >
+                  {card.features.map((feature) => (
+                    <Box
+                      key={feature}
+                      component="li"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 0.75,
+                        color: isActive ? "#4b5563" : "#9ca3af",
+                        fontFamily: FONT_FAMILY,
+                        fontSize: { xs: "0.85rem", md: "0.95rem" },
+                        fontWeight: 500,
+                        lineHeight: 1.4,
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      <CheckRoundedIcon
+                        sx={{
+                          color: isActive ? "#3b82f6" : "#d1d5db",
+                          fontSize: 18,
+                          flexShrink: 0,
+                          transition: "color 0.3s ease",
+                        }}
+                      />
+                      {feature}
+                    </Box>
+                  ))}
+                </Box>
               </Box>
             );
           })}
