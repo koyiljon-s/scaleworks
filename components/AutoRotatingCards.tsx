@@ -94,7 +94,12 @@ export default function AutoRotatingCards() {
       <Box sx={{ maxWidth: 1200, mx: "auto" }}>
         <Typography
           sx={{
-            fontSize: { xs: "2.4rem", sm: "2.8rem", md: "3.2rem", lg: "2.6rem" },
+            fontSize: {
+              xs: "2.4rem",
+              sm: "2.8rem",
+              md: "3.2rem",
+              lg: "2.6rem",
+            },
             fontWeight: 600,
             textAlign: "center",
             mb: 2,
@@ -106,8 +111,8 @@ export default function AutoRotatingCards() {
 
         <Typography
           sx={{
-            fontSize: { xs: "1rem", md: "1.1rem" },
-            color: "#6b7280",
+            fontSize: { xs: "1.2rem", md: "1.4rem" },
+            color: "#4a5568",
             mb: 4,
             maxWidth: 520,
             mx: "auto",

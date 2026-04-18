@@ -12,7 +12,7 @@ export default function About() {
         alignItems: "center",
         justifyContent: "center",
         gap: 2.5,
-        py: { xs: 12, md: 20 },
+        py: { xs: 12, md: 24 },
         px: { xs: 3, md: 6 },
         textAlign: "center",
       }}
@@ -41,18 +41,18 @@ export default function About() {
       <Typography
         sx={{
           pb: 2,
-          maxWidth: "650px",
+          maxWidth: "750px",
           fontSize: "1.25rem",
           fontFamily:
             "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-          color: "#666666",
-          fontWeight: 600,
+          color: "#71717a",
+          fontWeight: 500,
           lineHeight: 1.6,
         }}
       >
-        Integrate and automate all recruitment processes with Scaleworks
+        Integrate and automate your entire recruitment process with Scaleworks.
         <br />
-        Gain the hiring competitiveness that drives continuous business growth.
+        Hire top talent faster and fuel continuous business growth.
       </Typography>
 
       {/* CTA */}
@@ -75,7 +75,7 @@ export default function About() {
           color: "white",
         }}
       >
-        Get 7 days free
+        Get 14 days free
       </Button>
     </Box>
   );

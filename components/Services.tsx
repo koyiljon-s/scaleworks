@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     icon: DescriptionSharpIcon,
   },
   {
-    title: "Customize Announcement",
+    title: "Automated Candidate Notifications",
     icon: NotificationsSharpIcon,
   },
   {
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
     icon: PeopleSharpIcon,
   },
   {
-    title: "Job posting and Applicant Tracking",
+    title: "Job posting & Applicant Tracking",
     icon: DashboardCustomizeSharpIcon,
   },
 ];
@@ -94,7 +94,7 @@ export default function Services() {
               mb: 2,
             }}
           >
-            What services we provide
+            Powerful tools we offer 
           </Typography>
           <Typography
             sx={{

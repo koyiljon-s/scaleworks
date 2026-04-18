@@ -27,9 +27,8 @@ export default function Home() {
         <TalentPoolSection />
       </Box>
       <Box component="section" id="solutions" sx={sectionAnchorStyles}>
-        <Solutions />
-        <HiringNarrative />
         <AutoRotatingCards />
+        <HiringNarrative />
       </Box>
       <Box component="section" id="faq" sx={sectionAnchorStyles}>
         <FAQ />

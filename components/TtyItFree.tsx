@@ -67,7 +67,7 @@ export default function TryItFree() {
           color: '#3D3D3D'
         }}
       >
-        Start free for 7 days
+        Start free for 14 days
       </Button>
     </Box>
   );
