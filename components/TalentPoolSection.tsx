@@ -13,7 +13,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Button, DatePicker, Input, Select, Space, Table, Tag } from "antd";
 import type { TableColumnsType } from "antd";
 import type { Dayjs } from "dayjs";
-import { ReloadOutlined } from "@ant-design/icons";
+import { ReloadOutlined, SearchOutlined } from "@ant-design/icons";
 
 const tagColors: Record<string, string> = {
   "Product Leadership": "geekblue",
@@ -349,7 +349,7 @@ export default function TalentPoolSection() {
             `,
             p: { xs: 1.5, sm: 2, md: 3 },
             borderRadius: { xs: 2, md: 5 },
-            overflowX: "auto",
+            overflowX: { xs: "auto", md: "hidden" },
             WebkitOverflowScrolling: "touch",
             "& .ant-space": {
               width: { xs: "100%", md: "auto" },
@@ -417,14 +417,34 @@ export default function TalentPoolSection() {
               alignItems: { xs: "stretch", md: "center" },
             }}
           >
-            <Input.Search
-              placeholder="Search candidates or emails"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              allowClear
-              size="middle"
-              style={{ width: "100%" }}
-            />
+            <Box
+              sx={{
+                width: { xs: "100%", md: 280 },
+                flexShrink: 0,
+                mb: { xs: 5, md: 0 },
+                mr: { xs: 0, md: 0 },
+                "& .ant-input-affix-wrapper": {
+                  width: "100%",
+                },
+                "&& .ant-input": {
+                  minWidth: 0,
+                },
+                "& .ant-input-prefix": {
+                  color: "#64748b",
+                  marginInlineEnd: "8px",
+                },
+              }}
+            >
+              <Input
+                placeholder="Search candidates or emails"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                allowClear
+                prefix={<SearchOutlined />}
+                size="middle"
+                style={{ width: "100%" }}
+              />
+            </Box>
             <Space size="small" wrap>
               <DatePicker
                 allowClear
