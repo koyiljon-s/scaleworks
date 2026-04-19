@@ -90,8 +90,8 @@ export default function Pricing() {
     <Box
       component="section"
       sx={{
-        py: { xs: 10, md: 20 },
-        px: 2,
+        py: { xs: 8, md: 20 },
+        px: { xs: 2, md: 2 },
       }}
     >
       <Container maxWidth="lg">
@@ -100,7 +100,8 @@ export default function Pricing() {
           color="text.primary"
           sx={{
             fontWeight: 700,
-            fontSize: "2.7rem",
+            fontSize: { xs: "2rem", sm: "2.35rem", md: "2.7rem" },
+            lineHeight: 1.15,
             fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
@@ -161,13 +162,13 @@ export default function Pricing() {
                     borderColor: isHighlighted ? "rgba(59,130,246,0.45)" : "#e2e8f0",
                     borderWidth: isHighlighted ? 1.5 : 1,
                     borderRadius: {
-                      xs: "20px",
+                      xs: "8px",
                       md: isHighlighted
-                        ? "24px"
+                        ? "8px"
                         : isFirst
-                        ? "20px 0 0 20px"
+                        ? "8px 0 0 8px"
                         : isLast
-                        ? "0 20px 20px 0"
+                        ? "0 8px 8px 0"
                         : 0,
                     },
                     transform: {
@@ -196,8 +197,8 @@ export default function Pricing() {
                       display: "flex",
                       flexDirection: "column",
                       gap: 2.5,
-                      px: 4,
-                      py: 4,
+                      px: { xs: 2.5, sm: 4 },
+                      py: { xs: 3, sm: 4 },
                     }}
                   >
                     <Stack
@@ -318,7 +319,7 @@ export default function Pricing() {
                     </Stack>
                   </CardContent>
 
-                  <CardActions sx={{ px: 4, pb: 4, pt: 0 }}>
+                  <CardActions sx={{ px: { xs: 2.5, sm: 4 }, pb: { xs: 3, sm: 4 }, pt: 0 }}>
                     <Button
                       component="a"
                       href="/contact"

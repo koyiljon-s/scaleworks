@@ -7,11 +7,7 @@ import TouchAppRoundedIcon from "@mui/icons-material/TouchAppRounded";
 import DashboardCustomizeRoundedIcon from "@mui/icons-material/DashboardCustomizeRounded";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import SmartDisplayRoundedIcon from "@mui/icons-material/SmartDisplayRounded";
-import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
-import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
-import ViewListRoundedIcon from "@mui/icons-material/ViewListRounded";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 import ViewCarouselRoundedIcon from "@mui/icons-material/ViewCarouselRounded";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
@@ -38,7 +34,8 @@ export default function FreeLayoutSection() {
   return (
     <Stack
       py={{ xs: 6, md: 20 }}
-      spacing={{ xs: 2.5, md: 15 }}
+      px={{ xs: 2, md: 0 }}
+      spacing={{ xs: 4, md: 15 }}
       alignItems="center"
       sx={{ width: "100%" }}
     >
@@ -50,7 +47,7 @@ export default function FreeLayoutSection() {
           lineHeight: 1.15, 
           textAlign: "center",
           fontSize: {
-            xs: "2.4rem",
+            xs: "2rem",
             sm: "2.8rem",
             md: "3.2rem",
             lg: "2.6rem",
@@ -71,8 +68,8 @@ export default function FreeLayoutSection() {
           bgcolor: "#f3f3f5",
           maxWidth: 1200,
           mx: "auto",
-          borderRadius: "20px",
-          px: { xs: 3, sm: 4, md: 6, lg: 8 },
+          borderRadius: { xs: "14px", md: "20px" },
+          px: { xs: 2, sm: 4, md: 6, lg: 8 },
           py: { xs: 5, sm: 6, md: 10 },
           border: "1px solid rgba(59, 130, 246, 0.15)",
           boxShadow: `
@@ -105,7 +102,7 @@ export default function FreeLayoutSection() {
                   letterSpacing: "-0.04em",
                   lineHeight: 1.2,
                   fontSize: {
-                    xs: "2.5rem",
+                    xs: "2rem",
                     sm: "3rem",
                     md: "4rem",
                     lg: "1.9rem",
@@ -144,8 +141,8 @@ export default function FreeLayoutSection() {
                   <Paper
                     elevation={0}
                     sx={{
-                      height: { xs: 72, sm: 78, md: 76 },
-                      borderRadius: "16px",
+                      height: { xs: 68, sm: 78, md: 76 },
+                      borderRadius: "8px",
                       bgcolor: "#fafafa",
                       px: { xs: 1.2, sm: 1.5, md: 1.75 },
                       py: 1,
@@ -161,9 +158,9 @@ export default function FreeLayoutSection() {
                       sx={{
                         color: "#6f7079",
                         fontWeight: 600,
-                        fontSize: { xs: "0.76rem", md: "0.82rem" },
+                        fontSize: { xs: "0.72rem", sm: "0.76rem", md: "0.82rem" },
                         lineHeight: 1.15,
-                        letterSpacing: "-0.02em",
+                        letterSpacing: 0,
                         wordBreak: "keep-all",
                       }}
                     >
@@ -179,7 +176,7 @@ export default function FreeLayoutSection() {
                         color: "#2f80ff",
                       }}
                     >
-                      <Icon sx={{ fontSize: 24 }} />
+                      <Icon sx={{ fontSize: { xs: 20, sm: 24 } }} />
                     </Box>
                   </Paper>
                 </Grid>

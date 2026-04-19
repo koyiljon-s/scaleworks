@@ -57,8 +57,8 @@ export default function Services() {
           #7ab8e8 100%
         )
       `,
-        p: { xs: 4, md: 8 },
-        mt: { xs: 6, md: 0 },
+        p: { xs: 2.5, sm: 4, md: 8 },
+        mt: { xs: 4, md: 0 },
         color: "white",
       }}
     >
@@ -68,7 +68,7 @@ export default function Services() {
           flexDirection: { xs: "column", md: "row" },
           justifyContent: "center",
           alignItems: { xs: "flex-start", md: "stretch" },
-          gap: { xs: 8, md: 12 },
+          gap: { xs: 5, md: 12 },
           maxWidth: "1000px",
           mx: "auto",
           width: "100%",
@@ -87,7 +87,7 @@ export default function Services() {
         >
           <Typography
             sx={{
-              fontSize: "2.33rem",
+              fontSize: { xs: "2rem", md: "2.33rem" },
               fontWeight: 700,
               fontFamily:
                 "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -143,10 +143,11 @@ export default function Services() {
               <Box>
                 <Typography
                   sx={{
-                    fontSize: { xs: "1.1rem", md: "1.2rem" },
+                    fontSize: { xs: "1rem", md: "1.2rem" },
                     fontWeight: 350,
                     color: "white",
                     mb: 0.5,
+                    lineHeight: 1.35,
                     fontFamily:
                       "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   }}

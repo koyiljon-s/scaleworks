@@ -297,16 +297,16 @@ export default function TalentPoolSection() {
       sx={{
         bgcolor: "#fff",
         py: { xs: 8, md: 0 },
-        px: { xs: 3, md: 0 },
+        px: { xs: 2, md: 0 },
       }}
     >
-      <Container maxWidth={false} sx={{ px: { xs: 3, md: 4 } }}>
+      <Container maxWidth={false} sx={{ px: { xs: 0, md: 4 } }}>
         <Box sx={{ textAlign: "center", mb: { xs: 6, md: 12 } }}>
           <Typography
             component="h2"
             sx={{
               fontSize: {
-                xs: "2.4rem",
+                xs: "2rem",
                 sm: "2.8rem",
                 md: "3.2rem",
                 lg: "2.6rem",
@@ -322,7 +322,7 @@ export default function TalentPoolSection() {
           <Typography
             sx={{
               mt: 1.5,
-              fontSize: { xs: "1.2rem", md: "1.4rem" },
+              fontSize: { xs: "1rem", md: "1.4rem" },
               color: "#4a5568",
               fontWeight: 500,
               maxWidth: 560,
@@ -347,10 +347,21 @@ export default function TalentPoolSection() {
               0 0 0 1px rgba(255,255,255, 0.6) inset,
               0 4px 6px -1px rgba(59, 130, 246, 0.12)
             `,
-            p: { xs: 2, md: 3 },
-            borderRadius: 5,
-            overflowX: "hidden",
+            p: { xs: 1.5, sm: 2, md: 3 },
+            borderRadius: { xs: 2, md: 5 },
+            overflowX: "auto",
+            WebkitOverflowScrolling: "touch",
+            "& .ant-space": {
+              width: { xs: "100%", md: "auto" },
+            },
+            "& .ant-space-item": {
+              width: { xs: "100%", sm: "auto" },
+            },
+            "& .ant-picker, & .ant-select, & .ant-btn": {
+              width: { xs: "100% !important", sm: "auto" },
+            },
             "& .ant-table-wrapper": {
+              minWidth: { xs: 920, md: "auto" },
               borderRadius: 0,
             },
             "& .ant-table-container": {
@@ -379,7 +390,7 @@ export default function TalentPoolSection() {
           <Typography
             component="h3"
             sx={{
-              fontSize: { xs: "1.5rem", md: "2rem" },
+              fontSize: { xs: "1.25rem", md: "2rem" },
               fontWeight: 600,
               mb: 0.5,
               letterSpacing: "-0.01em",
@@ -392,7 +403,7 @@ export default function TalentPoolSection() {
               color: "text.secondary",
               maxWidth: 560,
               mb: 3,
-              fontSize: "0.95rem",
+              fontSize: { xs: "0.9rem", md: "0.95rem" },
             }}
           >
             Keep a curated bench warm with current touchpoints, readiness signals, and pipeline stage tracking.
@@ -412,7 +423,7 @@ export default function TalentPoolSection() {
               onChange={(e) => setSearchQuery(e.target.value)}
               allowClear
               size="middle"
-              style={{ width: "100%", maxWidth: 280 }}
+              style={{ width: "100%" }}
             />
             <Space size="small" wrap>
               <DatePicker

@@ -37,13 +37,14 @@ export default function ContactSales() {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Box sx={{ textAlign: "center", mb: 8, mt: 16 }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 }, px: { xs: 2.5, sm: 3 } }}>
+      <Box sx={{ textAlign: "center", mb: { xs: 5, md: 8 }, mt: { xs: 6, md: 16 } }}>
         <Typography
           color="text.primary"
           sx={{
             fontWeight: 700,
-            fontSize: "2.7rem",
+            fontSize: { xs: "2rem", sm: "2.35rem", md: "2.7rem" },
+            lineHeight: 1.15,
             fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
@@ -53,7 +54,8 @@ export default function ContactSales() {
           color="text.primary"
           sx={{
             fontWeight: 700,
-            fontSize: "2.7rem",
+            fontSize: { xs: "2rem", sm: "2.35rem", md: "2.7rem" },
+            lineHeight: 1.15,
             fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           }}
         >
@@ -64,18 +66,20 @@ export default function ContactSales() {
       <Box
         sx={{
           display: "flex",
-          mb: 8,
+          mb: { xs: 5, md: 8 },
           alignItems: "flex-start",
           flexDirection: { xs: "column", md: "row" },
+          gap: { xs: 4, md: 6 },
         }}
       >
         <Paper
           elevation={0}
           sx={{
-            p: 4,
+            p: { xs: 2.5, sm: 4 },
             flex: 1,
-            maxWidth: 500,
-            borderRadius: 3,
+            width: "100%",
+            maxWidth: { xs: "100%", md: 500 },
+            borderRadius: 2,
             border: 1.5,
             borderColor: "#E0E0E0",
           }}
@@ -89,7 +93,7 @@ export default function ContactSales() {
               fontFamily:
                 "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               fontWeight: 600,
-              mb: 4,
+              mb: { xs: 3, md: 4 },
             }}
           >
             Fill in the form
@@ -100,8 +104,8 @@ export default function ContactSales() {
             onSubmit={handleSubmit}
             sx={{ mt: 2, maxWidth: 480, mx: "auto", width: "100%" }}
           >
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-              <Box sx={{ display: "flex", gap: 3 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 2.5, md: 3 } }}>
+              <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { xs: 2.5, sm: 3 } }}>
                 <TextField
                   fullWidth
                   label="First Name"
@@ -254,7 +258,7 @@ export default function ContactSales() {
                   fontWeight: 600,
                   fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   mb: 0,
-                  pl: 2
+                  pl: { xs: 1, md: 2 }
                 }}
               >
                 User Guide
@@ -265,7 +269,7 @@ export default function ContactSales() {
               sx={{
                 color: "#666",
                 mb: 2,
-                pl: 6,
+                pl: { xs: 5, md: 6 },
                 fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               }}
             >
@@ -275,7 +279,7 @@ export default function ContactSales() {
               component="a"
               href="/#faq"
               sx={{
-                pl: 6,
+                pl: { xs: 5, md: 6 },
                 color: "#2563EB",
                 textDecoration: "none",
                 fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -302,7 +306,7 @@ export default function ContactSales() {
                   fontWeight: 600,
                   fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
                   mb: 0,
-                  pl: 2
+                  pl: { xs: 1, md: 2 }
                 }}
               >
                 Pricing
@@ -313,7 +317,7 @@ export default function ContactSales() {
               sx={{
                 color: "#666",
                 mb: 2,
-                pl: 6,
+                pl: { xs: 5, md: 6 },
                 fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               }}
             >
@@ -323,7 +327,7 @@ export default function ContactSales() {
               component="a"
               href="/pricing"
               sx={{
-                pl: 6,
+                pl: { xs: 5, md: 6 },
                 color: "#2563EB",
                 textDecoration: "none",
                 fontFamily: "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",

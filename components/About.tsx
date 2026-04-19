@@ -12,8 +12,8 @@ export default function About() {
         alignItems: "center",
         justifyContent: "center",
         gap: 2.5,
-        py: { xs: 12, md: 24 },
-        px: { xs: 3, md: 6 },
+        py: { xs: 10, sm: 12, md: 24 },
+        px: { xs: 2.5, sm: 3, md: 6 },
         textAlign: "center",
       }}
     >
@@ -22,7 +22,7 @@ export default function About() {
       <Typography
         sx={{
           maxWidth: "900px",
-          fontSize: { xs: "3.25rem", md: "4.8rem" },
+          fontSize: { xs: "2.55rem", sm: "3.25rem", md: "4.8rem" },
           fontFamily:
             "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           fontWeight: 700,
@@ -42,7 +42,7 @@ export default function About() {
         sx={{
           pb: 2,
           maxWidth: "750px",
-          fontSize: "1.25rem",
+          fontSize: { xs: "1rem", sm: "1.15rem", md: "1.25rem" },
           fontFamily:
             "var(--font-pretendard), 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
           color: "#71717a",
@@ -64,7 +64,7 @@ export default function About() {
         sx={{
           mt: 2,
           py: 1.25,
-          px: 3.5,
+          px: { xs: 3, md: 3.5 },
           borderRadius: 2,
           background: "#2f6df6",
           fontWeight: 600,

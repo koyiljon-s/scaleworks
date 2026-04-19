@@ -4,7 +4,6 @@ import TryItFree from '@/components/TtyItFree';
 import Services from '@/components/Services';
 import FreeLayoutSection from '@/components/FreeLayoutSection';
 import TalentPoolSection from '@/components/TalentPoolSection';
-import Solutions from '@/components/Solutions';
 import HiringNarrative from '@/components/HiringNarrative';
 import AutoRotatingCards from '@/components/AutoRotatingCards';
 import FAQ from '@/components/FAQ';

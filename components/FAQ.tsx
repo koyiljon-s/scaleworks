@@ -12,24 +12,24 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const FAQ_ITEMS = [
   {
-    question: "Do I need to install anything to start using Scaleworks?",
+    question: "What does Scaleworks help recruiting teams manage?",
     answer:
-      "Scaleworks runs in the cloud, so you can log in from any browser. We only recommend installing the onboarding assistant if you want real-time alerts on desktop.",
+      "Scaleworks brings your hiring work into one platform: career site creation, job postings, applicant tracking, talent pool management, interview scheduling, candidate notifications, team collaboration, and pipeline analytics.",
   },
   {
-    question: "Does Scaleworks integrate with my existing ATS?",
+    question: "Can we build a recruitment website without designers or developers?",
     answer:
-      "Yes. We ship native connectors for the most popular ATS platforms and provide an open API. Configure integrations from the admin settings without writing code.",
+      "Yes. You can create a branded recruitment website with flexible layouts, menus, banners, images, videos, FAQs, blogs, social links, and mobile optimization. Scaleworks also supports subdomains and custom domain connections depending on your plan.",
   },
   {
-    question: "Can I customize the interview workflows?",
+    question: "How does Scaleworks help manage candidates after they apply?",
     answer:
-      "You can tailor every stage, automation rule, and approver directly from the workflow builder. Drag and drop steps or add conditional logic in minutes.",
+      "Teams can track applicants, build talent pools, organize candidates with tags and filters, coordinate interview schedules, and send updates when interviews are booked, changed, or ready to share.",
   },
   {
-    question: "Is support included during the trial?",
+    question: "What plans are available?",
     answer:
-      "Absolutely. Our success engineers monitor your workspace and reply within one business day. Use the in-product chat or email us anytime.",
+      "Standard covers the recruitment homepage builder, job postings, applications, interview scheduling, announcements, and subdomain registration. Pro adds analytics, templates, surveys, notifications, talent pools, and real-time support. Enterprise adds custom permissions, AI document screening, custom domains, and production support.",
   },
 ];
 
@@ -40,16 +40,16 @@ export default function FAQ() {
       sx={{
         width: "100%",
         bgcolor: "#fff",
-        px: 14,
-        py: 8,
+        px: { xs: 2.5, sm: 4, md: 8, lg: 14 },
+        py: { xs: 8, md: 12 },
       }}
     >
       <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 8, md: 16 },
-        }}
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: { xs: 4, md: 16 },
+          }}
       >
         <Box
           sx={{
@@ -59,7 +59,7 @@ export default function FAQ() {
         >
           <Typography
             sx={{
-              fontSize: "2.75rem",
+              fontSize: { xs: "2.25rem", md: "2.75rem" },
               fontWeight: 600,
               color: "black",
               textTransform: "uppercase",
@@ -70,13 +70,13 @@ export default function FAQ() {
           </Typography>
           <Typography
             sx={{
-              fontSize: "1.1rem",
-              lineHeight: 1.2,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+              lineHeight: 1.35,
               color: "#666666",
               mb: 2,
             }}
           >
-            Contact us if you need more details. We&apos;ll get back to you quickly.
+            Quick answers about building, tracking, and scaling your hiring process with Scaleworks.
           </Typography>
         </Box>
 
@@ -113,8 +113,9 @@ export default function FAQ() {
               >
                 <Typography
                   sx={{
-                    fontSize: "1rem",
+                    fontSize: { xs: "0.98rem", md: "1rem" },
                     color: "#0F172A",
+                    pr: 1.5,
                   }}
                 >
                   {faq.question}

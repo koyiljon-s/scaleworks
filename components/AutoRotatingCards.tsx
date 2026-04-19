@@ -83,8 +83,8 @@ export default function AutoRotatingCards() {
       component="section"
       sx={{
         width: "100%",
-        py: { xs: 8, md: 14 },
-        px: { xs: 3, md: 8 },
+        py: { xs: 8, md: 28 },
+        px: { xs: 2.5, sm: 3, md: 8 },
         bgcolor: "#ffffff",
         color: "#111111",
       }}
@@ -93,10 +93,10 @@ export default function AutoRotatingCards() {
         <Typography
           sx={{
             fontSize: {
-              xs: "2.4rem",
+              xs: "2rem",
               sm: "2.8rem",
               md: "3.2rem",
-              lg: "2.6rem",
+              lg: "3.2rem",
             },
             fontWeight: 600,
             textAlign: "center",
@@ -109,7 +109,7 @@ export default function AutoRotatingCards() {
 
         <Typography
           sx={{
-            fontSize: { xs: "1.2rem", md: "1.4rem" },
+            fontSize: { xs: "1rem", md: "1.4rem" },
             color: "#4a5568",
             mb: 4,
             maxWidth: 520,
@@ -125,8 +125,8 @@ export default function AutoRotatingCards() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
-            gap: { xs: 3, md: 8 },
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "repeat(4, 1fr)" },
+            gap: { xs: 2.5, sm: 3, md: 8 },
             mb: 2,
           }}
         >
@@ -148,7 +148,7 @@ export default function AutoRotatingCards() {
                 }}
                 sx={{
                   cursor: isActive ? "default" : "pointer",
-                  pt: 10,
+                  pt: { xs: 2, md: 10 },
                 }}
               >
                 <Box
@@ -157,7 +157,7 @@ export default function AutoRotatingCards() {
                     height: "5px",
                     bgcolor: "#e5e7eb",
                     borderRadius: "999px",
-                    mb: 3,
+                    mb: { xs: 2, md: 3 },
                   }}
                 >
                   {isActive && (
@@ -195,13 +195,13 @@ export default function AutoRotatingCards() {
 
                 <Typography
                   sx={{
-                    fontSize: { xs: "1.2rem", md: "1.4rem" },
+                    fontSize: { xs: "1.15rem", md: "1.4rem" },
                     fontWeight: 600,
                     color: isActive ? "#111111" : "#9ca3af",
                     mb: 1.25,
                     fontFamily: FONT_FAMILY,
                     transition: "color 0.3s ease",
-                    py: 1.5,
+                    py: { xs: 1, md: 1.5 },
                   }}
                 >
                   {card.title}

@@ -12,16 +12,20 @@ export default function HiringNarrative() {
       component="section"
       sx={{
         background: `
+          radial-gradient(ellipse at 100% 50%, rgba(59,130,246,0.25), transparent 60%),
+          radial-gradient(ellipse at 900% 50%, rgba(255,255,255,0.06), transparent 45%),
           linear-gradient(
-            90deg, #0B2A6F 0%, #1E4FD1 50%, #6FA4FF 200%
+            to right,
+            #000005 0%,
+            #03091f 35%,
+            #0d1f5c 60%,
+            #1d4ed8 80%,
+            #7ab8e8 100%
           )
         `,
-        maxWidth: "1200px",
-        borderRadius: 5,
-        mx: "auto",
         color: "#f8fafc",
         py: { xs: 10, md: 8 },
-        px: 8,
+        px: { xs: 2.5, sm: 4, md: 10, lg: 18 },
       }}
     >
       <Container maxWidth="lg">
@@ -31,10 +35,9 @@ export default function HiringNarrative() {
               <Typography
                 key={paragraph}
                 sx={{
-                  fontSize: { xs: "1.85rem", md: "1.7rem" },
-                  lineHeight: 1.7,
+                  fontSize: { xs: "1.25rem", sm: "1.45rem", md: "1.7rem" },
+                  lineHeight: { xs: 1.55, md: 1.7 },
                   textAlign: "left",
-                  fontStyle: "italic",
                 }}
               >
                 {`"${paragraph}"`}
