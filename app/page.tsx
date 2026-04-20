@@ -6,6 +6,7 @@ import FreeLayoutSection from '@/components/FreeLayoutSection';
 import TalentPoolSection from '@/components/TalentPoolSection';
 import HiringNarrative from '@/components/HiringNarrative';
 import AutoRotatingCards from '@/components/AutoRotatingCards';
+import KeyDifferencesSection from "@/components/KeyDifferencesSection";
 import FAQ from '@/components/FAQ';
 import { Box } from "@mui/material";
 
@@ -19,6 +20,9 @@ export default function Home() {
       <NavBar />
       <Box component="section" id="home" sx={sectionAnchorStyles}>
         <About />
+      </Box>
+      <Box component="section" id="why" sx={sectionAnchorStyles}>
+        <KeyDifferencesSection />
       </Box>
       <Box component="section" id="products" sx={sectionAnchorStyles}>
         <Services />

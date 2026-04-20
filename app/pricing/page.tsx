@@ -1,6 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Pricing from "@/components/Pricing";
-import FAQ from "@/components/FAQ";
+import PricingFAQ from "@/components/PricingFAQ";
 import TryItFree from "@/components/TtyItFree";
 
 export default function PricingPage() {
@@ -8,7 +8,7 @@ export default function PricingPage() {
     <main>
       <NavBar />
       <Pricing />
-      <FAQ />
+      <PricingFAQ />
       <TryItFree />
     </main>
   );
